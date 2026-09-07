@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Last Town | القوانين</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+:root{--bg:#05080d;--panel:#0b111a;--panel2:#0e1621;--line:#1b2a3a;--blue:#199cff;--cyan:#42c8ff;--text:#f4f8fc;--muted:#91a0b1}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 85% 0%,#0d2944 0,transparent 35%),var(--bg);color:var(--text);font-family:Cairo,Arial,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:40px 40px}
+header{position:sticky;top:0;z-index:10;background:rgba(5,8,13,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(66,200,255,.14)}
+.nav{max-width:1200px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:20px} .logo{width:42px;height:42px;border:1px solid #2aaeff;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#0d2032,#09243b);box-shadow:0 0 30px #0b8edb33}
+.search{width:min(330px,45vw);background:#09111b;border:1px solid var(--line);border-radius:12px;padding:11px 14px;color:white;outline:none;font-family:inherit}
+.hero{max-width:1200px;margin:auto;padding:90px 22px 55px;text-align:center}
+.badge{display:inline-flex;padding:7px 14px;border-radius:999px;border:1px solid #1c7eb6;background:#0b2538;color:#67d0ff;font-size:12px;font-weight:800}
+h1{font-size:clamp(42px,7vw,82px);line-height:1;margin:20px 0 15px;letter-spacing:-3px} .gradient{background:linear-gradient(90deg,#fff,#58cfff);-webkit-background-clip:text;color:transparent}
+.hero p{max-width:700px;margin:auto;color:var(--muted);font-size:17px;line-height:2}
+.stats{max-width:760px;margin:35px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{padding:16px;border:1px solid var(--line);background:#09111a99;border-radius:15px} .stat b{display:block;font-size:25px} .stat span{font-size:12px;color:var(--muted)}
+.layout{max-width:1200px;margin:auto;padding:10px 22px 80px;display:grid;grid-template-columns:230px 1fr;gap:20px}
+aside{position:sticky;top:85px;height:max-content;padding:12px;border:1px solid var(--line);background:#080e16cc;border-radius:18px}
+aside a{display:block;padding:11px 12px;color:#9eacbb;text-decoration:none;border-radius:10px;font-size:13px} aside a:hover{background:#102438;color:#fff}
+.card{margin-bottom:18px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#0b121b,#080d14);overflow:hidden;box-shadow:0 20px 50px #0003}
+.card-head{display:flex;align-items:center;gap:15px;padding:22px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#0d1b28,#0a111a)}
+.num{font-size:22px;font-weight:900;color:#2db7ff;width:48px;height:48px;display:grid;place-items:center;border:1px solid #17577c;border-radius:13px;background:#092033}
+.eyebrow{font-size:9px;color:#4abfff;letter-spacing:1.5px;font-weight:800} h2{margin:2px 0 0;font-size:22px} .icon{margin-right:auto;font-size:25px}
+ol{margin:0;padding:10px 52px 25px 60px} li{padding:11px 5px;color:#d9e1e9;line-height:1.9;border-bottom:1px solid #13202d;font-size:14px} li:last-child{border:0}
+footer{border-top:1px solid var(--line);text-align:center;padding:35px 20px;color:#728192;font-size:13px} footer b{color:#dce9f5}
+@media(max-width:800px){.layout{grid-template-columns:1fr}aside{position:static;display:grid;grid-template-columns:1fr 1fr}.search{width:42vw}}
+@media(max-width:520px){.nav{padding:12px}.brand span{display:none}.hero{padding-top:55px}.stats{grid-template-columns:1fr}aside{grid-template-columns:1fr}ol{padding-right:35px;padding-left:35px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <div class="brand"><div class="logo">LT</div><span>LAST TOWN</span></div>
+  <input id="search" class="search" placeholder="ابحث في القوانين..." oninput="filterRules()">
+</div></header>
+<main>
+<section class="hero">
+  <div class="badge">OFFICIAL RULEBOOK • CFW</div>
+  <h1><span class="gradient">قوانين Last Town</span></h1>
+  <p>مرجع القوانين الرسمي للمدينة. اقرأ القوانين والتزم بها للمحافظة على تجربة رول بلاي ممتعة وعادلة للجميع.</p>
+  <div class="stats">
+    <div class="stat"><b>5</b><span>أقسام رئيسية</span></div>
+    <div class="stat"><b>78</b><span>قانون وبند</span></div>
+    <div class="stat"><b>24/7</b><span>مرجع متاح</span></div>
+  </div>
+</section>
+<div class="layout">
+<aside>
+  <a href="#section-1">01 — قوانين عامة</a><a href="#section-2">02 — قوانين الرول بلاي</a><a href="#section-3">03 — قوانين العصابات</a><a href="#section-4">04 — قوانين السرقات</a><a href="#section-5">05 — العقوبات</a>
+</aside>
+<div id="rules">
+    <section class="card" id="section-1">
+      <div class="card-head">
+        <span class="num">01</span>
+        <div>
+          <div class="eyebrow">LAST TOWN • RULES</div>
+          <h2>قوانين عامة</h2>
+        </div>
+        <span class="icon">⚖️</span>
+      </div>
+      <ol>
+        <li>احترام جميع اللاعبين والإداريين.</li><li>يمنع السب والشتم والإساءة.</li><li>يمنع استغلال الثغرات أو الأخطاء البرمجية.</li><li>يمنع استخدام برامج الغش أو أي برامج تعطي أفضلية غير عادلة.</li><li>يمنع نشر سيرفرات أو روابط خارجية بدون إذن.</li>
+      </ol>
+    </section>
+    
+    <section class="card" id="section-2">
+      <div class="card-head">
+        <span class="num">02</span>
+        <div>
+          <div class="eyebrow">LAST TOWN • RULES</div>
+          <h2>قوانين الرول بلاي</h2>
+        </div>
+        <span class="icon">🎭</span>
+      </div>
+      <ol>
+        <li>الالتزام بشخصية الرول بلاي وعدم الخروج من السيناريو.</li><li>يمنع RDM: قتل لاعب بدون سبب رول بلاي.</li><li>يمنع VDM: استخدام المركبة لدعس اللاعبين بدون سبب رول بلاي.</li><li>يمنع Metagaming: استخدام معلومات حصلت عليها خارج اللعبة.</li><li>يمنع Powergaming: إجبار لاعب على سيناريو بدون إعطائه فرصة للتفاعل.</li><li>يمنع الاستهبال والتصرفات غير المنطقية داخل المدينة.</li>
+      </ol>
+    </section>
+    
+    <section class="card" id="section-3">
+      <div class="card-head">
+        <span class="num">03</span>
+        <div>
+          <div class="eyebrow">LAST TOWN • RULES</div>
+          <h2>قوانين العصابات</h2>
+        </div>
+        <span class="icon">💀</span>
+      </div>
+      <ol>
+        <li>يمنع ارتداء لبس عصابه مو فيها ف أثناء  القانق وار .</li><li>يجب أن يكون زي العصابة موحدًا وواضحًا لأعضاء العصابة.</li><li>يمنع تقليد زي عصابة أخرى بهدف الاستفزاز  او اخذ  تحذير من المافيا بسبب الحقد على العصابه .</li><li>يمنع ارتداء زي العصابة إذا لم تكن عضوًا رسميًا فيها.</li><li>يمنع استخدام الوان المركبه الخاصة بعصابة أخرى بدون علمها او ما تكون منها .</li><li>يمنع تغيير الزي أثناء السيناريو للهروب من التعرف عليك.</li><li>يمنع تغير الملابس لإخفاء هوية اللاعب أثناء السيناريو : م تغير الملابس ال ( بعد السيناريو ب 10 دقايق ) .</li><li>يحق للإدارة طلب تعديل زي العصابة إذا كان مخالفًا لأنظمة السيرفر او فيه مشكله برمجيه</li><li>يمنع استغلال الرتبة أو الصلاحيات.</li><li>يمنع التعاون مع عصابات اخرى ضد العصابه الى انت فيها  .</li><li>يمنع الخطف أو الرهائن بدون سبب وسيناريو واضح.</li>
+      </ol>
+    </section>
+    
+    <section class="card" id="section-4">
+      <div class="card-head">
+        <span class="num">04</span>
+        <div>
+          <div class="eyebrow">LAST TOWN • RULES</div>
+          <h2>قوانين السرقات</h2>
+        </div>
+        <span class="icon">💰</span>
+      </div>
+      <ol>
+        <li>الالتزام بعدد المشاركين المحدد لكل سرقة.</li><li>يمنع بدء السرقة بدون تجهيز سيناريو رول بلاي.</li><li>يمنع استغلال الثغرات في السرقات.</li><li>يمنع بدء السرقة بدون عدد كافٍ من المشاركين حسب نوع السرقة.</li><li>يمنع بدء أكثر من سرقة في نفس الوقت .</li><li>يجب وجود رهينة إذا كانت السرقة تشترط ذلك.</li><li>يمنع استخدام الرهائن الوهميين أو المتفق عليهم.</li><li>يمنع قتل الرهينة بدون سبب واضح.</li><li>يمنع استغلال الثغرات أو الأخطاء البرمجية أثناء السرقة.</li><li>يمنع استخدام معلومات خارج اللعبة للتخطيط للسرقة.</li><li>يجب إعطاء الشرطة فرصة للتفاوض إذا كان السيناريو يسمح بذلك.</li><li>يمنع إطلاق النار مباشرة بدون سبب أو تصعيد مناسب.</li><li>يمنع استخدام الرهينة كوسيلة للضغط خارج حدود السيناريو.</li><li>يمنع تغيير الملابس أو المركبات بشكل غير منطقي للهروب.</li><li>يمنع العودة لموقع السرقة بعد الهروب أو انتهاء السيناريو بهدف الانتقام.</li><li>يجب على الشرطة الالتزام بعدد المشاركين المسموح به.</li><li>يمنع تدخل جهات غير مصرح لها في السرقة.</li><li>يمنع استخدام القوة المفرطة بدون مبرر.</li><li>يجب الحفاظ على سيناريو التفاوض قبل التصعيد متى ما كان ذلك ممكنًا.</li><li>يمنع RDM و VDM أثناء السرقة.</li><li>يمنع استخدام المركبات غير المخصصة أو غير المنطقية للهرب.</li><li>يمنع استغلال الـBug أو الـGlitch للحصول على أموال.</li><li>يمنع الاتفاق السري بين السارق والشرطة لتسهيل السرقة.</li><li>أي مخالفة لأنظمة السرقات تعرض اللاعب للعقوبة</li>
+      </ol>
+    </section>
+    
+    <section class="card" id="section-5">
+      <div class="card-head">
+        <span class="num">05</span>
+        <div>
+          <div class="eyebrow">LAST TOWN • RULES</div>
+          <h2>العقوبات</h2>
+        </div>
+        <span class="icon">🚨</span>
+      </div>
+      <ol>
+        <li>المخالفات البسيطة: تنبيه أو تحذير.</li><li>المخالفات المتكررة: سجن/باند حسب الحالة.</li><li>الغش واستغلال الثغرات: باند وقد يكون دائمًا.</li><li>للإدارة الحق في تقدير العقوبة حسب المخالفة.</li><li>الالتزام بالزي الرسمي المخصص لكل رتبة.</li><li>يمنع تغيير أو إضافة أي قطعة على الزي بدون إذن.</li><li>يمنع ارتداء ملابس مدنية أثناء المناوبات.</li><li>يجب ارتداء القبعة أو الخوذه حسب التعليمات.</li><li>يمنع استخدام زي القوات الخاصة إلا للأفراد المصرح لهم.</li><li>الالتزام بالعتاد المحدد لكل رتبة.</li><li>يمنع أخذ عتاد غير مخصص لك.</li><li>يمنع إعطاء العتاد العسكري لأي شخص خارج الشرطه.</li><li>يمنع استخدام المركبات والمعدات العسكرية لأغراض شخصية.</li><li>يمنع إخراج الأسلحة أو المعدات من المستودع بدون تسجيل أو إذن.</li><li>أي فقدان أو إساءة استخدام للعتاد يتحمل صاحبه المسؤولية.</li><li>احترام جميع الرتب الأعلى.</li><li>الالتزام بأوامر القيادة.</li><li>يمنع الجدال أو مخالفة الأوامر أثناء المهمة.</li><li>يمنع الغياب عن المناوبة بدون عذر أو إذن.</li><li>يمنع استخدام الرتبة لتحقيق مصالح شخصية.</li><li>يمنع ترك الموقع أو المهمة بدون إذن.</li><li>مخالفة الأنظمة تعرض العسكري للباند حسب المخالفه.</li><li>الالتزام بالزي الرسمي أثناء المناوبة.</li><li>يمنع تعديل الزي أو إضافة قطع غير معتمدة.</li><li>يمنع ارتداء الزي المدني أثناء الخدمة.</li><li>الالتزام بالزي المخصص لكل رتبة أو قسم.</li><li>يمنع استخدام زي أو معدات الإسعاف من غير الموظفين.</li><li>الالتزام بالعتاد المخصص لكل رتبة.</li><li>يمنع إعطاء معدات الإسعاف لأي شخص خارج القطاع.</li><li>يمنع استخدام سيارات الإسعاف لأغراض شخصية.</li><li>يمنع أخذ المعدات الطبية بدون إذن.</li><li>يجب المحافظة على جميع معدات</li>
+      </ol>
+    </section>
+    </div>
+</div>
+</main>
+<footer><b>Last Town</b> | عِش القصة، لا تخربها.</footer>
+<script>
+function filterRules(){
+ const q=document.getElementById('search').value.trim().toLowerCase();
+ document.querySelectorAll('.card').forEach(card=>{
+   card.style.display=card.innerText.toLowerCase().includes(q)?'block':'none';
+ });
+}
+</script>
+</body></html>
